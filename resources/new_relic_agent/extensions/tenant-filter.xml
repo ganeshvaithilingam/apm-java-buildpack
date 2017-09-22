@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension xmlns="https://newrelic.com/docs/java/xsd/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="newrelic-extension extension.xsd" name="extension-example" version="1.0" enabled="true">
+  <instrumentation>
+    <pointcut ignoreTransaction="false">
+      <className>com.ge.stuf.tenant.context.TenantContextFilter</className>
+      <method>
+        <name>initializeTenantContext</name>
+        <parameters>
+          <type>javax.servlet.http.HttpServletRequest</type>
+          <type>javax.servlet.http.HttpServletResponse</type>
+          <type attributeName="tenantUuid">java.lang.String</type>
+        </parameters>
+      </method>
+    </pointcut>
+  </instrumentation>
+</extension>
