@@ -17,3 +17,5 @@
 ---
 version: 3.30.0
 repository_root: "{default.repository.root}/new-relic"
+distributed_tracing:
+   enabled: true
